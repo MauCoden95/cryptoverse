@@ -4,7 +4,9 @@
 			require_once 'Views/User/Register.php';
 		}
 
-
+		public function login(){
+			require_once 'Views/User/Login.php';
+		}
 
 
 	}

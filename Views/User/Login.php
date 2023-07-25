@@ -20,19 +20,13 @@
 			<img src="<?= base_url ?>/Assets/Img/Logo.png" alt="Logo">
 		</a>
 		<form action="#" method="POST">
-			<h2>Registro</h2>
-			<input type="text" placeholder="Nombre completo">
-			<input type="text" placeholder="Apellidos">
+			<h2>Login</h2>
 			<input type="text" placeholder="Usuario">
-			<input type="email" placeholder="Correo electrónico">
-			<input type="text" placeholder="Dirección">
-			<input type="text" placeholder="Ciudad">
-			<input type="text" placeholder="Dni">
+			<input type="number" placeholder="Dni">
 			<input type="password" placeholder="Contraseña">
-			<input type="password" placeholder="Confirmar contraseña">
-			<button>Registrarse</button>
+			<button>Ingresar</button>
 			<h3><input type="checkbox"> Acepto los <a href="#">términos y condicines</a></h3>
-			<h3>¿Ya tiene cuenta? <a href="http://localhost/cryptoverse/?controller=user&action=login">Ingrese acá</a></h3>
+			<h3>¿No tiene cuenta? <a href="http://localhost/cryptoverse/?controller=user&action=register">Registrese acá</a></h3>
 		</form>
 
 
