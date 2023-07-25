@@ -1,0 +1,521 @@
+@import url('https://fonts.cdnfonts.com/css/segoe-ui-4');
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+	font-family: 'Segoe UI', sans-serif;    
+	transition: all 300ms;                                     
+}
+
+:root{
+	--black: #151515;
+	--yellow: #f9d00e;
+	--orange: #EB7B18;
+}
+
+
+html{
+	font-size: 62.5%;
+}
+
+body{
+	background: var(--black);
+}
+
+.center{
+	width: 80%;
+	height: 100%;
+	margin: 0 auto;
+}
+
+.separate{
+	position: relative;
+	margin: 5rem 0;
+}
+
+.separate img{
+	position: absolute;
+	top: -2rem;
+	left: 48%;
+	width: 5rem;
+}
+
+
+/*HEADER*/
+#header{
+	width: 100%;
+	height: 10rem;
+}
+
+#header .center{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+#header .center img{
+	width: 10rem;
+}
+
+#header nav{
+	width: auto;
+	height: 100%;
+}
+
+#header nav ul{
+	width: auto;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+#header nav ul li{
+	font-size: 1.8rem;
+	list-style: none;
+	margin: 0 1rem;
+}
+
+#header nav ul li a{
+	text-decoration: none;
+	color: var(--yellow);
+}
+
+#header .register_link{
+	font-size: 2rem;
+	color: var(--yellow);
+	text-decoration: none;
+	border: .1rem solid var(--yellow);
+	padding: 1rem 1.3rem;
+	border-radius: 1.5rem;
+}
+
+
+
+#header .register_link:hover{
+	color: var(--black);
+	background: var(--yellow);
+	box-shadow: 0 0 2rem var(--yellow);
+}
+
+
+
+
+
+
+
+/*HOME*/
+#banner,
+#cryptocurrencies,
+#features,
+#message_ceo,
+#slider_clients,
+#cryptoverse_card{
+	padding: 1px;
+	width: 100%;
+	min-height: 45rem;
+}
+
+#cryptocurrencies,
+#features{
+	margin-top: 5rem;
+	margin-bottom: 5rem;
+}
+
+#banner .center,
+#cryptocurrencies .center{
+	margin-top: 6rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+
+#banner .center div{
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+#banner .center div h1{
+	font-size: 3.7rem;
+	color: var(--orange);
+}
+
+#banner .center div h1 i{
+	color: var(--yellow);
+}
+
+#banner .center div h2{
+	font-size: 2.5rem;
+	color: var(--yellow);
+}
+
+#banner .center div a{
+	font-size: 2rem;
+	padding: 1rem 2rem;
+	color: var(--black);
+	background: var(--yellow);
+	text-decoration: none;
+	border-radius: 1rem;
+	margin-top: 3rem;
+}
+
+#banner .center div a:hover{
+	background: var(--orange);
+}
+
+#banner .center img{
+	width: 30rem;
+	position: relative;
+	animation: moveUpDown 2s infinite;
+}
+
+@keyframes moveUpDown {
+      0% {
+        top: 0; 
+      }
+      50% {
+        top: 3rem; 
+      }
+      100% {
+        top: 0; 
+      }
+    }
+
+.crypto-card{
+	width: 20%;
+	height: 20rem;
+	background: rgba(255, 255, 255, 0.2);
+	border-radius: 16px;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+
+
+
+
+
+#cryptocurrencies > h2,
+#features > h2,
+#slider_clients > h2,
+#cryptoverse_card > h2{
+	text-align: center;
+	font-size: 4rem;
+	color: #fff;
+	margin: 3rem 0;
+}
+
+#cryptocurrencies .center{
+	margin-top: 5rem;
+}
+
+.crypto-card h2{
+	font-size: 2.2rem;
+	color: #fff;
+}
+
+.crypto-card img{
+	width: 10rem;
+	height: 10rem;
+}
+
+
+#features .center{
+	display: grid;
+  	grid-template-rows: repeat(3, 1fr); 
+  	grid-template-columns: repeat(2, 1fr); 
+  	gap: 1rem; 
+    padding: 2rem;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.crypto-feature{
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	background: rgba(255, 255, 255, 0.2);
+	border-radius: 16px;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.crypto-feature img{
+	width: 8rem;
+	height: 8rem;
+}
+
+.crypto-feature div{
+	width: 70%;
+	padding: 1rem;
+}
+
+.crypto-feature div h2{
+	display: block;
+	color: #fff;
+	font-size: 1.5rem;
+}
+
+.crypto-feature div p{
+	font-size: 1.3rem;
+	text-align: justify;
+}
+
+
+
+
+
+
+
+
+
+#message_ceo .center{
+	height: 55rem;
+	display: flex;
+	justify-content: space-between;
+}
+
+#message_ceo,
+#slider_clients,
+#cryptoverse_card{
+	margin-top: 15rem;
+}
+
+
+
+#message_ceo .center .message_info{
+	position: relative;
+	width: 45%;
+	height: 70%;
+	background: #666;
+	padding: 2rem;
+	margin-top: 5rem;
+}
+
+.message_info h2{
+	text-align: center;
+	margin: 2rem 0;
+	font-size: 2rem;
+	color: var(--yellow);
+}
+
+.message_info p{
+	text-align: justify;
+	font-size: 1.4rem;
+	color: #fff;
+}
+
+.message_info cite{
+	display: block;
+	margin-top: 3rem;
+	font-size: 1.7rem;
+	color: var(--orange);
+}
+
+.hexagon-container {
+  position: absolute;
+  top: 22rem;
+  right: 0;
+  width: 25rem; 
+  perspective: 60rem; 
+}
+
+.hexagon {
+  width: 100%;
+  height: 100%;
+  background-color: #ccc;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); 
+  transition: transform 0.3s ease; 
+}
+
+.hexagon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+
+
+.swiper {
+	margin-top: 3rem;
+      width: 100%;
+      height: 60%;
+    }
+
+    .swiper-slide {
+      background: #999;
+	border-radius: 16px;
+	border: .1rem solid var(--yellow);
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
+    }
+
+     
+    .swiper-slide img {
+      display: block;
+      margin:  auto;
+      width: 30rem;
+      height: 100%;
+      object-fit: cover;
+    }
+
+
+
+
+
+
+
+
+.cryptoverse_card_card{
+	position: relative;
+	width: 40rem;
+	height: 25rem;
+	background: #555;
+	border-radius: 1rem;
+	z-index: 10;
+}
+
+.cryptoverse_card_card img{
+	position: absolute;
+	width: 10rem;
+	top: 1rem;
+	left: 1rem;
+}
+
+.cryptoverse_card_card h2{
+	position: absolute;
+	font-size: 2.5rem;
+	bottom: 4rem;
+	left: 2rem;
+	color: #fff;
+}
+
+.cryptoverse_card_card h4{
+	position: absolute;
+	font-size: 2rem;
+	bottom: 2rem;
+	left: 2rem;
+	color: var(--yellow);
+}
+
+.cryptoverse_card_card .lni-mastercard{
+	position: absolute;
+	font-size: 5rem;
+	bottom: 2rem;
+	right: 2rem;
+	color: var(--yellow);
+}
+
+.cryptoverse_card_card .lni-btc{
+	position: absolute;
+	font-size: 15rem;
+	top: 2rem;
+	right: 0;
+	color: #222;
+	z-index: 1000;
+}
+
+
+#cryptoverse_card .center{
+	margin-top: 5rem;
+	display: flex;
+	justify-content: space-around;
+}
+
+.cryptoverse_card_info{
+	width: 40rem;
+	height: 30rem;
+}
+
+.cryptoverse_card_info ul{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-between;
+}
+
+.cryptoverse_card_info ul li{
+	min-width: 80%;
+	font-size: 1.5rem;
+	list-style: none;
+	display: flex;
+	color: #fff;
+}
+
+.cryptoverse_card_info ul li i{
+	font-size: 2rem;
+	margin-right: 1rem;
+	color: var(--yellow);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*FOOTER*/
+footer{
+	width: 100%;
+	min-height: 12rem;
+	background: #444;
+	margin-top: 5rem;
+	padding: 3rem 0;
+}
+
+footer img{
+	width: 20rem;
+}
+
+footer .center{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+footer .center div{
+	width: 20%;
+	height: 100%;
+}
+
+footer .center div ul li{
+	list-style: none;
+	font-size: 1.5rem;
+	color: var(--yellow);
+	margin: .5rem 0;
+}
+
+
+
+.footer-link > a,
+.footer-link > i{
+	display: block;
+	margin: 2rem 0;
+	text-decoration: none;
+	color: var(--yellow);
+}
