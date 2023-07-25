@@ -1,0 +1,103 @@
+@import url('https://fonts.cdnfonts.com/css/segoe-ui-4');
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+	font-family: 'Segoe UI', sans-serif;    
+	transition: all 300ms;          
+	overflow: hidden;                           
+}
+
+:root{
+	--black: #151515;
+	--yellow: #f9d00e;
+	--orange: #EB7B18;
+}
+
+
+html{
+	font-size: 62.5%;
+}
+
+body{
+	background: var(--black);
+	display: flex;
+}
+
+.center{
+	width: 80%;
+	height: 100%;
+	margin: 0 auto;
+}
+
+#form_section{
+	position: relative;
+	width: 50vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+#form_section img{
+	position: absolute;
+	top: 1rem;
+	left: 1rem;
+	width: 15rem;
+	height: 15rem;
+}
+
+#form_section form{
+	width: 50%;
+	min-height: 20rem;
+	border-radius: 1rem;
+	border: .1rem solid var(--orange);
+	padding: 1rem;
+}
+
+#form_section form h2{
+	font-size: 3rem;
+	color: #fff;
+	text-align: center;
+}
+
+#form_section form input,
+#form_section form button{
+	display: block;
+	margin: 1rem auto;
+	width: 95%;
+	padding: 1rem;
+	border-radius: 1rem;
+}
+
+#form_section form input{
+	border: .1rem solid var(--yellow);
+}
+
+#form_section form button{
+	font-size: 1.7rem;
+	background: var(--yellow);
+}	
+
+#form_section form button:hover{
+	cursor: pointer;
+	background: var(--orange);
+}	
+
+#form_section form h3{
+	text-align: center;
+	color: #fff;
+	font-size: 1.7rem;
+}	
+
+#form_section form h3 a{
+	color: var(--yellow);
+}	
+
+img{
+	width: 50vw;
+	height: 100vh;
+}

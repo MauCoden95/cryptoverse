@@ -18,12 +18,12 @@
 	  rel="stylesheet"
 	  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
 	/>
-	<title>Cryptoverse</title>
+	<title>CryptoVerse</title>
 </head>
 <body>
 	<header id="header">
 		<div class="center">
-			<a href="#">
+			<a href="http://localhost/cryptoverse/">
 				<img src="<?= base_url ?>/Assets/Img/Logo.png">
 			</a>
 
@@ -37,6 +37,6 @@
 				</ul>
 			</nav>
 
-			<a href="#" class="register_link"><i class="lni lni-users"></i> Registro</a>
+			<a href="http://localhost/cryptoverse/?controller=user&action=register" class="register_link"><i class="lni lni-users"></i> Registro</a>
 		</div>
 	</header>
