@@ -26,7 +26,7 @@
 			<a href="http://localhost/cryptoverse/">
 				<img src="<?= base_url ?>/Assets/Img/Logo.png">
 			</a>
-
+			<?= var_dump($_SESSION['user']->username); ?>
 			<nav>
 				<ul>
 					<li><a href="">Comprar cryptos</a></li>

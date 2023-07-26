@@ -19,17 +19,16 @@
 		<a href="http://localhost/cryptoverse/">
 			<img src="<?= base_url ?>/Assets/Img/Logo.png" alt="Logo">
 		</a>
-		<form action="#" method="POST">
+		<form action="http://localhost/cryptoverse/?controller=user&action=create" method="POST">
 			<h2>Registro</h2>
-			<input type="text" placeholder="Nombre completo">
-			<input type="text" placeholder="Apellidos">
-			<input type="text" placeholder="Usuario">
-			<input type="email" placeholder="Correo electrónico">
-			<input type="text" placeholder="Dirección">
-			<input type="text" placeholder="Ciudad">
-			<input type="text" placeholder="Dni">
-			<input type="password" placeholder="Contraseña">
-			<input type="password" placeholder="Confirmar contraseña">
+			<input type="text" name="name" placeholder="Nombre completo" required>
+			<input type="text" name="lastname" placeholder="Apellidos" required>
+			<input type="text" name="username" placeholder="Usuario" required>
+			<input type="email" name="email" placeholder="Correo electrónico" required>
+			<input type="text" name="address" placeholder="Dirección" required>
+			<input type="text" name="city" placeholder="Ciudad" required>
+			<input type="number" name="dni" placeholder="Dni" min="4000000" max="100000000" required>
+			<input type="password" name="password" placeholder="Contraseña" required>
 			<button>Registrarse</button>
 			<h3><input type="checkbox"> Acepto los <a href="#">términos y condicines</a></h3>
 			<h3>¿Ya tiene cuenta? <a href="http://localhost/cryptoverse/?controller=user&action=login">Ingrese acá</a></h3>
