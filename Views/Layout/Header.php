@@ -26,7 +26,7 @@
 			<a href="http://localhost/cryptoverse/">
 				<img src="<?= base_url ?>/Assets/Img/Logo.png">
 			</a>
-			<?= var_dump($_SESSION['user']->username); ?>
+			
 			<nav>
 				<ul>
 					<li><a href="">Comprar cryptos</a></li>
@@ -37,6 +37,13 @@
 				</ul>
 			</nav>
 
-			<a href="http://localhost/cryptoverse/?controller=user&action=register" class="register_link"><i class="lni lni-users"></i> Registro</a>
+
+			<?php if(isset($_SESSION['user']) == true): ?>
+				<p class="register_link">Bienvenido, <?= $_SESSION['user']->username ?></a>
+				<a href="http://localhost/cryptoverse/?controller=user&action=logout">Cerrar sesión</a>
+			<?php else: ?>
+				<a href="http://localhost/cryptoverse/?controller=user&action=register" class="register_link"><i class="lni lni-users"></i> Registro</a>
+			<?php endif; ?>
+			
 		</div>
 	</header>

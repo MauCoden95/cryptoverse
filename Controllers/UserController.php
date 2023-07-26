@@ -102,7 +102,6 @@
 
 
 	        header('Location: http://localhost/cryptoverse/?controller=user&action=register');
-
 		}
 
 
@@ -118,7 +117,7 @@
 
 
 				if ($identity) {
-					echo "LOGIN<br>";
+					echo "LOGIN";
 					header('Location: http://localhost/cryptoverse/');
 					$_SESSION['user'] = $identity;
 					//print_r($_SESSION['user']);
@@ -130,6 +129,12 @@
 			}
 
 
+		}
+
+
+		public function logout(){
+			unset($_SESSION['user']);
+			header('Location: http://localhost/cryptoverse/');
 		}
 	}
 

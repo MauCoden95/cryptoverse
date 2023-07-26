@@ -25,6 +25,7 @@
         require_once 'Views/Layout/Footer.php';
     }
 
+    //session_destroy();
       
 
 
