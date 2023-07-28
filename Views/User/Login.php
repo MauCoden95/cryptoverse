@@ -21,6 +21,9 @@
 		</a>
 		<form action="http://localhost/cryptoverse/?controller=user&action=signin" method="POST">
 			<h2>Login</h2>
+			<?php if(isset($_SESSION['error_login'])) : ?>
+	            <li class="error"><?= $_SESSION['error_login']; ?></li>
+			<?php endif; ?>
 			<input type="text" name="username" placeholder="Usuario">
 			<input type="number" name="dni" placeholder="Dni">
 			<input type="password" name="password" placeholder="Contraseña">

@@ -50,6 +50,7 @@ body{
 }
 
 #header .center{
+	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -90,6 +91,8 @@ body{
 	border: .1rem solid var(--yellow);
 	padding: 1rem 1.3rem;
 	border-radius: 1.5rem;
+	background: var(--black);
+	cursor: pointer;
 }
 
 
@@ -99,6 +102,47 @@ body{
 	background: var(--yellow);
 	box-shadow: 0 0 2rem var(--yellow);
 }
+
+
+#header .center .hiddenContent{
+	position: absolute;
+	top: 8rem;
+	right: 2rem;
+	width: 20rem;
+	min-height: 0;
+	background: var(--black);
+	border: .2rem solid var(--yellow);
+	border-radius: 1rem;
+	z-index: 1000000;
+	overflow: hidden;
+}
+
+.form-admin-invisible{
+	display: none;
+}
+
+
+
+.hiddenContent a{
+	display: block;
+	width: 100%;
+	text-align: center;
+	text-decoration: none;
+	color: var(--yellow);
+	font-size: 2rem;
+	line-height: 6rem;
+}
+
+.hiddenContent a:hover{
+	background: var(--yellow);
+	color: var(--black);
+}
+
+
+
+
+
+
 
 
 

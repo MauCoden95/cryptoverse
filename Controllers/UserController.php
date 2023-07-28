@@ -84,7 +84,7 @@
 			    }
 
 
-
+			    echo count($_SESSION['errors']);
 
 
 			  	if (count($_SESSION['errors']) < 1) {	
@@ -92,9 +92,12 @@
 
 			  		if ($save) {
 			  			$_SESSION['register'] = true;
+			  			unset($_SESSION['errors']);
 			  		}else{
 			  			$_SESSION['register'] = false;
 			  		}
+			  	}else{
+			  		print_r($_SESSION['errors']);
 			  	}
 			    
 			    
@@ -121,8 +124,10 @@
 					header('Location: http://localhost/cryptoverse/');
 					$_SESSION['user'] = $identity;
 					//print_r($_SESSION['user']);
+					unset($_SESSION['error_login']);
 				}else{
-					echo "NO LOGIN";
+					header('Location: http://localhost/cryptoverse/?controller=user&action=login');
+					$_SESSION['error_login'] = "Hubo un error al iniciar sesión";
 				}
 
 

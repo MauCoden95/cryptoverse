@@ -21,6 +21,20 @@
 		</a>
 		<form action="http://localhost/cryptoverse/?controller=user&action=create" method="POST">
 			<h2>Registro</h2>
+			<?php if(isset($_SESSION['errors'])) : ?>
+	            <div>
+	                <ul>
+	                    <?php foreach($_SESSION['errors'] as $error) :  ?>
+	                        <li class="error"><?= "*".$error; ?></li>
+	                    <?php endforeach; ?>
+	                </ul>
+	            </div>
+
+	        <?php elseif(isset($_SESSION['register'])): ?>
+	            <div class="success">
+	                <p>El nuevo usuario se registró con exito!!!</p>
+	            </div>
+	        <?php endif; ?>
 			<input type="text" name="name" placeholder="Nombre completo" required>
 			<input type="text" name="lastname" placeholder="Apellidos" required>
 			<input type="text" name="username" placeholder="Usuario" required>
