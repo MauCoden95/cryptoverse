@@ -19,7 +19,7 @@
 		<a href="http://localhost/cryptoverse/">
 			<img src="<?= base_url ?>/Assets/Img/Logo.png" alt="Logo">
 		</a>
-		<form action="http://localhost/cryptoverse/?controller=user&action=signin" method="POST">
+		<form action="http://localhost/cryptoverse/?controller=user&action=signin" method="POST" autocomplete="off">
 			<h2>Login</h2>
 			<?php if(isset($_SESSION['error_login'])) : ?>
 	            <li class="error"><?= $_SESSION['error_login']; ?></li>

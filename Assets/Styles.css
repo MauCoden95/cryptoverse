@@ -563,3 +563,29 @@ footer .center div ul li{
 	text-decoration: none;
 	color: var(--yellow);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*SETTINGS PAGE*/
+.h2_token{
+	width: 60%;
+	border-radius: 1rem;
+	font-size: 3.5rem;
+	color: var(--black);
+	background: var(--yellow);
+	border: .5rem solid var(--orange);
+	padding: 2rem;
+	margin: 2rem auto;
+	text-align: center;
+}

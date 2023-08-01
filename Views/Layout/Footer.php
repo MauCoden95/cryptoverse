@@ -4,7 +4,7 @@
 				<img src="<?= base_url ?>/Assets/Img/Logo.png" alt="logo">
 				<ul>
 					<li>
-						<i class="lni lni-phone"></i> 4898-7123
+						<i class="lni lni-whatsapp"></i> 11-4898-7123
 					</li>
 					<li>
 						<i class="lni lni-envelope"></i> cryptoverse@crypto.com

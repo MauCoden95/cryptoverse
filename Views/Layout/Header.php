@@ -44,8 +44,9 @@
 				<button class="register_link user_btn">Bienvenido, <?= $_SESSION['user']->username ?></button>
 				<!--<a href="http://localhost/cryptoverse/?controller=user&action=logout">Cerrar sesión</a>-->
 				<div class="hiddenContent form-admin-invisible">
-					<a href="#">Mi Billetera <i class="lni lni-wallet"></i></a>
-					<a href="#">Configuración <i class="lni lni-cogs"></i></a>
+					
+					<a href="http://localhost/cryptoverse/?controller=user&action=myWallet">Mi Billetera <i class="lni lni-wallet"></i></a>
+					<a href="http://localhost/cryptoverse/?controller=user&action=settings">Configuración <i class="lni lni-cogs"></i></a>
 					<a href="http://localhost/cryptoverse/?controller=user&action=logout">Cerrar sesión <i class="lni lni-exit"></i></a>
 				</div>
 			<?php else: ?>

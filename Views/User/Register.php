@@ -19,7 +19,7 @@
 		<a href="http://localhost/cryptoverse/">
 			<img src="<?= base_url ?>/Assets/Img/Logo.png" alt="Logo">
 		</a>
-		<form action="http://localhost/cryptoverse/?controller=user&action=create" method="POST">
+		<form action="http://localhost/cryptoverse/?controller=user&action=create" method="POST" autocomplete="off">
 			<h2>Registro</h2>
 			<?php if(isset($_SESSION['errors'])) : ?>
 	            <div>
