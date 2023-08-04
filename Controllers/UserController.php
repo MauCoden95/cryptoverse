@@ -64,7 +64,7 @@
 
 
 			    //VALIDATE ADDRESS
-				if (!preg_match('/^[a-zA-Z\s]+$/', $user->getAddress())) {
+				if (!preg_match('/^[a-zA-Z\d\s]+$/', $user->getAddress())) {
 				    $_SESSION['errors']['address']  = "Error, la dirección solo puede contener letras";
 				}
 
@@ -91,7 +91,7 @@
 			    }
 
 
-			    echo count($_SESSION['errors']);
+			    //echo count($_SESSION['errors']);
 
 
 			  	if (count($_SESSION['errors']) < 1) {	
@@ -100,6 +100,8 @@
 			  		if ($save) {
 			  			$_SESSION['register'] = true;
 			  			unset($_SESSION['errors']);
+			  			$user->createCard($user->getUsername());
+			  			$user->createWallet($user->getUsername());
 			  		}else{
 			  			$_SESSION['register'] = false;
 			  		}
@@ -127,13 +129,19 @@
 
 
 				if ($identity) {
-					//echo "LOGIN";
 					header('Location: http://localhost/cryptoverse/');
 					$_SESSION['user'] = $identity;
-					//print_r($_SESSION['user']);
 					unset($_SESSION['error_login']);
 					$_SESSION['token'] = rand(100000, 999999);
-					//print_r($_SESSION['token']);
+
+					
+					$data_card = $user->cardData($_SESSION['user']->id);
+					$_SESSION['card'] = $data_card;
+
+					$data_wallet = $user->cardWallet($_SESSION['user']->id);
+					$_SESSION['wallet'] = $data_wallet;
+
+					//print_r($_SESSION['card']);
 				}else{
 					header('Location: http://localhost/cryptoverse/?controller=user&action=login');
 					$_SESSION['error_login'] = "Nombre de usuario, dni y/o contraseña incorrectos";
@@ -147,8 +155,7 @@
 
 
 		public function logout(){
-			unset($_SESSION['user']);
-			unset($_SESSION['token']);
+			session_destroy();
 			header('Location: http://localhost/cryptoverse/');
 		}
 
@@ -158,6 +165,72 @@
 
 		public function settings(){
 			require_once 'Views/Settings.php';
+		}
+
+		public function update(){
+			if (isset($_POST)) {
+				$user = new User();
+				$user->setAddress($_POST['address']);
+				$user->setCity($_POST['city']);
+				$user->setPassword($_POST['password']);
+
+				$_SESSION['errors_update'] = array();
+
+				//VALIDATE ADDRESS
+				if (!preg_match('/^[a-zA-Z\d\s]+$/', $user->getAddress())) {
+				    $_SESSION['errors_update']['address']  = "Error, la dirección solo puede contener letras";
+				}
+
+
+				//VALIDATE CITY
+				if (!preg_match('/^[a-zA-Z\s]+$/', $user->getCity())) {
+				    $_SESSION['errors_update']['city']  = "Error, la ciudad solo puede contener letras";
+				}
+
+				//VALIDATE PASSWORD
+				$pattern = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W\_])[A-Za-z\d\W\_]+$/';
+
+				if (!preg_match($pattern, $user->getPassword())) {
+			    	$_SESSION['errors_update']['password']  = "Error, La contraseña debe contener al menos una letra minúscula, una mayúscula, un número y un símbolo";
+			    }
+
+
+			    if (count($_SESSION['errors_update']) < 1) {	
+			  		$update = $user->update($_SESSION['user']->id,$user->getAddress(),$user->getCity(),$user->getPassword());
+
+					
+					$_SESSION['update'] = true;
+					
+					
+			  	}else{
+			  		$_SESSION['update'] = false;
+			  	}
+
+
+				
+			}
+
+			header('Location: http://localhost/cryptoverse/?controller=user&action=settings');
+		}
+
+		public function addReview(){
+			if (isset($_POST)) {
+				$stars = $_POST['stars'];
+				$review = $_POST['review'];
+
+				$user = new User();
+				$review = $user->addReview($_SESSION['user']->id,$review,$stars);
+
+				if ($review) {
+					$_SESSION['review'] = true;
+				}else{
+					$_SESSION['review'] = false;
+					exit();
+					//header('Location: http://localhost/cryptoverse/?controller=user&action=settings');
+				}
+			}
+
+			header('Location: http://localhost/cryptoverse/?controller=user&action=settings');
 		}
 	}
 

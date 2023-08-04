@@ -20,3 +20,22 @@ window.onload = function() {
 
 
 
+let stars = document.querySelector('.stars');
+let range = document.querySelector('.range');
+
+if (range) {
+    range.addEventListener('change', () => {
+        if (range.value == 1) {
+            stars.innerHTML = '<i class="lni lni-star-fill"></i>';     
+        }else if (range.value == 2) {
+            stars.innerHTML = '<i class="lni lni-star-fill"></i>'+'<i class="lni lni-star-fill"></i>';     
+        }else if (range.value == 3) {
+            stars.innerHTML = '<i class="lni lni-star-fill"></i>'+'<i class="lni lni-star-fill"></i>'+'<i class="lni lni-star-fill"></i>';     
+        }else if (range.value == 4) {
+            stars.innerHTML = '<i class="lni lni-star-fill"></i>'+'<i class="lni lni-star-fill"></i>'+'<i class="lni lni-star-fill"></i>'+'<i class="lni lni-star-fill"></i>';     
+        }else{
+            stars.innerHTML = '<i class="lni lni-star-fill"></i>'+'<i class="lni lni-star-fill"></i>'+'<i class="lni lni-star-fill"></i>'+'<i class="lni lni-star-fill"></i>'+'<i class="lni lni-star-fill"></i>';     
+        }
+       
+    })    
+}

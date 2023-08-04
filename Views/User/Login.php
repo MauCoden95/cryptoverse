@@ -28,7 +28,6 @@
 			<input type="number" name="dni" placeholder="Dni">
 			<input type="password" name="password" placeholder="Contraseña">
 			<button>Ingresar</button>
-			<h3><input type="checkbox" checked> Acepto los <a href="#">términos y condicines</a></h3>
 			<h3>¿No tiene cuenta? <a href="http://localhost/cryptoverse/?controller=user&action=register">Registrese acá</a></h3>
 		</form>
 

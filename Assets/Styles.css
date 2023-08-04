@@ -1,11 +1,11 @@
-@import url('https://fonts.cdnfonts.com/css/segoe-ui-4');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
 
 *{
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 	scroll-behavior: smooth;
-	font-family: 'Segoe UI', sans-serif;    
+	font-family: 'Comfortaa', cursive;
 	transition: all 300ms;                                     
 }
 
@@ -15,6 +15,29 @@
 	--orange: #EB7B18;
 }
 
+*::selection{
+	background: var(--orange);
+	color: #fff;
+}
+
+::-webkit-scrollbar{
+	width: 1rem;
+	height: .5rem;
+}
+
+::-webkit-scrollbar-track{
+	background: transparent;
+}
+
+
+::-webkit-scrollbar-thumb{
+	background: var(--yellow);
+}
+
+
+::-webkit-scrollbar-thumb:active{
+	background: var(--orange);
+}
 
 html{
 	font-size: 62.5%;
@@ -22,6 +45,34 @@ html{
 
 body{
 	background: var(--black);
+}
+
+.error{
+	width: 95%;
+	display: block;
+	color: #830202;
+	background: #FC7878;
+	border: .2rem solid #830202;
+	padding: .3rem;
+	font-size: 1.5rem;
+	margin: 0 auto;
+	border-radius: .3rem;
+	margin-bottom: .7rem;
+	text-align: center;
+}
+
+.success{
+	width: 95%;
+	display: block;
+	color: #0E8212;
+	background: #50E955;
+	border: .2rem solid #0E8212;
+	padding: .3rem;
+	font-size: 1.5rem;
+	margin: 0 auto;
+	border-radius: .3rem;
+	margin-bottom: .7rem;
+	text-align: center;
 }
 
 .center{
@@ -74,7 +125,7 @@ body{
 }
 
 #header nav ul li{
-	font-size: 1.8rem;
+	font-size: 1.4rem;
 	list-style: none;
 	margin: 0 1rem;
 }
@@ -85,7 +136,7 @@ body{
 }
 
 #header .register_link{
-	font-size: 2rem;
+	font-size: 1.6rem;
 	color: var(--yellow);
 	text-decoration: none;
 	border: .1rem solid var(--yellow);
@@ -107,7 +158,7 @@ body{
 #header .center .hiddenContent{
 	position: absolute;
 	top: 8rem;
-	right: 2rem;
+	right: 1rem;
 	width: 20rem;
 	min-height: 0;
 	background: var(--black);
@@ -129,7 +180,7 @@ body{
 	text-align: center;
 	text-decoration: none;
 	color: var(--yellow);
-	font-size: 2rem;
+	font-size: 1.5rem;
 	line-height: 6rem;
 }
 
@@ -151,12 +202,7 @@ body{
 
 
 /*HOME*/
-#banner,
-#cryptocurrencies,
-#features,
-#message_ceo,
-#slider_clients,
-#cryptoverse_card{
+section{
 	padding: 1px;
 	width: 100%;
 	min-height: 45rem;
@@ -186,7 +232,7 @@ body{
 }
 
 #banner .center div h1{
-	font-size: 3.7rem;
+	font-size: 3rem;
 	color: var(--orange);
 }
 
@@ -251,10 +297,7 @@ body{
 
 
 
-#cryptocurrencies > h2,
-#features > h2,
-#slider_clients > h2,
-#cryptoverse_card > h2{
+.section_title{
 	text-align: center;
 	font-size: 4rem;
 	color: #fff;
@@ -336,7 +379,7 @@ body{
 #message_ceo,
 #slider_clients,
 #cryptoverse_card{
-	margin-top: 15rem;
+	margin-top: 10rem;
 }
 
 
@@ -443,7 +486,7 @@ body{
 .cryptoverse_card_card h2{
 	position: absolute;
 	font-size: 2.5rem;
-	bottom: 4rem;
+	bottom: 5rem;
 	left: 2rem;
 	color: #fff;
 }
@@ -471,6 +514,14 @@ body{
 	right: 0;
 	color: #222;
 	z-index: 1000;
+}
+
+.cryptoverse_card_card .expiration_date{
+	position: absolute;
+	top: 20.5rem;
+	left: 20rem;
+	font-size: 2rem;
+	color: var(--yellow);	
 }
 
 
@@ -508,6 +559,23 @@ body{
 	color: var(--yellow);
 }
 
+
+
+.cryptoverse_card_card .band_card{
+	width: 100%;
+	height: 5rem;
+	background: #000;
+	margin-top: 3rem;
+}
+
+.cryptoverse_card_card .cvv{
+	width: 15rem;
+	background: #fff;
+	margin-top: .5rem;
+	text-align: right;
+	font-size: 2rem;
+	padding: 1rem;
+}
 
 
 
@@ -588,4 +656,145 @@ footer .center div ul li{
 	padding: 2rem;
 	margin: 2rem auto;
 	text-align: center;
+}
+
+#form_update{
+	width: 80%;
+	min-height: 20rem;
+	margin: 3rem auto;
+}
+
+#form_update form{
+	width: 50%;
+	min-height: 20rem;
+	margin: 0 auto;
+	border: .2rem solid var(--yellow);
+	border-radius: 1rem;
+	padding: 1rem;
+}
+
+#form_update form h2{
+	text-align: center;
+	font-size: 2rem;
+	color: #fff;
+	margin: 2rem 0;
+}
+
+#form_update form input{
+	display: block;
+	width: 80%;
+	font-size: 2rem;
+	padding: 1rem;
+	margin: 2rem auto;
+	border-radius: 1rem;
+	border: .2rem solid var(--yellow);
+	outline: none;
+}
+
+#form_update form input:focus{
+	border: .2rem solid var(--orange);
+}
+
+#form_update form button{
+	cursor: pointer;
+	display: block;
+	width: 80%;
+	font-size: 2rem;
+	padding: 1rem;
+	margin: 2rem auto;
+	border-radius: 1rem;
+	background: var(--yellow);
+	border: .2rem solid var(--yellow);
+}
+
+#form_update form button:hover{
+	background: var(--orange);
+}
+
+.form_flex{
+	display: flex;
+}
+
+#form_update form input[type="range"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 80%;
+  height: 1rem;
+  border-radius: .5rem;
+  background: var(--yellow);
+  outline: none;
+  margin: 1rem auto;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 3rem;
+  height: 3rem;
+  border-radius: .5rem;
+  background: var(--orange); /* Color del thumb */
+  cursor: pointer;
+}
+
+#form_update form .stars{
+	display: block;
+	width: 100%;
+	text-align: center;
+	color: var(--yellow);
+	font-size: 3rem;
+	margin: 0 auto;
+}
+
+#form_update form textarea{
+	width: 80%;
+	height: 12.5rem;
+	display: block;
+	margin: 3rem auto;
+	padding: 1rem;
+	font-size: 1.5rem;
+}
+
+
+
+
+
+
+
+
+/*WALLET*/
+#myWallet .center{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.wallet_card{
+	position: relative;
+	width: 20rem;
+	height: 20rem;
+	background: #666;
+	border-radius: 1rem;
+}
+
+.wallet_card img{
+	position: absolute;
+	bottom: 4rem;
+	right: 4rem;
+	width: 5rem;
+}
+
+.wallet_card h2{
+	display: block;
+	text-align: center;
+	line-height: 10rem;
+	font-size: 2rem;
+}
+
+.wallet_card h4{
+	position: absolute;
+	bottom: 1rem;
+	left: 5rem;
+	text-align: center;
+	line-height: 10rem;
+	font-size: 5rem;
 }

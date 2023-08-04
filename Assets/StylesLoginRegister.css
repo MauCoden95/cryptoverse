@@ -1,11 +1,11 @@
-@import url('https://fonts.cdnfonts.com/css/segoe-ui-4');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
 
 *{
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 	scroll-behavior: smooth;
-	font-family: 'Segoe UI', sans-serif;    
+	font-family: 'Comfortaa', cursive; 
 	transition: all 300ms;          
 	overflow: hidden;                           
 }
@@ -107,23 +107,27 @@ img{
 .error{
 	width: 95%;
 	display: block;
-	color: #fff;
-	background: #f00;
-	padding: .3rem;
+	color: #830202;
+	background: #FC7878;
+	border: .2rem solid #830202;
+	padding: .7rem;
 	font-size: 1.5rem;
 	margin: 0 auto;
 	border-radius: .3rem;
 	margin-bottom: .7rem;
+	text-align: center;
 }
 
 .success{
 	width: 95%;
 	display: block;
-	color: #fff;
-	background: #080;
-	padding: .3rem;
+	color: #0E8212;
+	background: #50E955;
+	border: .2rem solid #0E8212;
+	padding: .7rem;
 	font-size: 1.5rem;
 	margin: 0 auto;
 	border-radius: .3rem;
 	margin-bottom: .7rem;
+	text-align: center;
 }

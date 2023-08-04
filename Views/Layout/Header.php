@@ -19,6 +19,7 @@
 	  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
 	/>
 
+	
 
 	<title>CryptoVerse</title>
 </head>

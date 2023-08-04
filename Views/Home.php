@@ -12,7 +12,7 @@
 
 
 <section id="cryptocurrencies">
-	<h2>Criptos con las que trabajamos</h2>
+	<h2 class="section_title">Criptos con las que trabajamos</h2>
 	<div class="center">
 		<div class="crypto-card">
 			<h2>Bitcoin (BTC)</h2>
@@ -43,7 +43,7 @@
 
 
 <section id="features">
-	<h2>Algunas características clave</h2>
+	<h2 class="section_title">Algunas características clave</h2>
 	<div class="center">
 		<div class="crypto-feature">
 			<img src="<?= base_url ?>/Assets/Img/Feature1.png">
@@ -135,7 +135,7 @@
 </div>
 
 <section id="slider_clients">
-	<h2>Algunos de nuestros partners</h2>
+	<h2 class="section_title">Algunos de nuestros partners</h2>
 	<div class="center">
 		<div class="swiper mySwiper">
 	    <div class="swiper-wrapper">
@@ -182,7 +182,7 @@
 
 
 <section id="cryptoverse_card">
-	<h2>Solicitá nuestra tarjeta</h2>
+	<h2 class="section_title">Solicitá nuestra tarjeta</h2>
 	<div class="center">
 		<div class="cryptoverse_card_card">
 			<img src="<?= base_url ?>/Assets/Img/Logo.png" alt="logo">

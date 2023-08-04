@@ -111,6 +111,7 @@
 
             if ($query) {
                 $result = true;
+                
             }
 
 
@@ -132,7 +133,126 @@
 
                 if ($verify) {
                     $result = $data;
+
+                 
+
                 }
+            }
+
+            return $result;
+        }
+
+
+        public function update($id,$address,$city,$password){
+            $result = false;
+            $sql = "UPDATE users SET address = '{$this->getAddress()}', city = '{$this->getCity()}', password = '{$this->getPassword()}' WHERE id = $id;";
+
+            $query = $this->db->query($sql);
+
+            if ($query) {
+                $result = true;
+            }
+
+
+
+            return $result;
+        }
+
+        public function cardData($id){
+            $result = false;
+
+            $sql = "SELECT u.name, u.lastname, c.number, c.code, c.expiration
+            FROM users u
+            JOIN cards c ON u.id = c.user_id
+            WHERE u.id = $id;";
+
+            $query = $this->db->query($sql);
+
+            if ($query && $query->num_rows == 1) {
+                $data_card = $query->fetch_object();
+
+                $result = $data_card;
+            }
+
+            return $result;
+        }
+
+        public function createCard($username){
+            $sql = "SELECT id FROM users WHERE username = '{$username}';";
+
+            $query = $this->db->query($sql);
+
+            if ($query && $query->num_rows == 1) {
+                $user = $query->fetch_object();
+
+                $year = strval(rand(2025, 2030)); 
+                $month = strval(rand(1,12));
+
+                $date_exp = $month.'/'.$year;
+
+                $number = strval(rand(1000, 9999)).' '.strval(rand(1000, 9999)).' '.strval(rand(1000, 9999)).' '.strval(rand(1000, 9999));
+
+                //echo $number;
+                $cvv = rand(100,999);
+
+                $create = "INSERT INTO cards VALUES(NULL,$user->id,'{$date_exp}','{$number}',$cvv);";
+                $create_card = $this->db->query($create); 
+            }
+        }
+
+        public function createWallet($username){
+            $sql = "SELECT id FROM users WHERE username = '{$username}';";
+
+            $query = $this->db->query($sql);
+
+            if ($query && $query->num_rows == 1) {
+                $user = $query->fetch_object();
+
+                $create = "INSERT INTO wallets VALUES(NULL,$user->id,0,0,0,0);";
+                $create_wallet = $this->db->query($create);
+            }
+        }
+
+
+        public function addReview($user_id,$review,$stars){
+            $result = false;
+
+            try {
+
+                $sql = "INSERT INTO reviews VALUES(NULL,$user_id,'{$review}',$stars);";
+                $query = $this->db->query($sql);
+                header('Location: http://localhost/cryptoverse/?controller=user&action=settings');
+                if ($query) {
+                     $result = true;
+                } 
+                exit(); 
+
+            } catch (mysqli_sql_exception $e) {
+                echo "Error al insertar el registro: " . $e->getMessage();
+                header('Location: http://localhost/cryptoverse/?controller=user&action=settings');
+            }
+
+           
+
+            
+
+            return $result;
+        }
+
+        public function cardWallet($id){
+            $result = false;
+
+            $sql = "SELECT u.name, w.bitcoin, w.ethereum, w.litecoin, w.cardano
+                    FROM users u
+                    JOIN wallets w ON u.id = w.user_id
+                    WHERE w.user_id = $id;";
+
+            $query = $this->db->query($sql);
+
+            if ($query && $query->num_rows == 1) {
+                $data_wallet = $query->fetch_object();
+
+                $result = $data_wallet;
             }
 
             return $result;
