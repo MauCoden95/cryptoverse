@@ -1,0 +1,139 @@
+@media(max-width: 1260px){
+	.hexagon-container {
+	  width: 16rem; 
+	  top: 27rem;
+	  right: 29%;
+	}
+}
+
+
+
+
+
+@media(max-width: 1200px){
+	html{
+		font-size: 50%;
+	}
+
+	.crypto-card h2{
+		font-size: 1.7rem;
+		color: #fff;
+	}
+
+	.hexagon-container {
+	  width: 20rem; 
+	  top: 30rem;
+	  right: 29%;
+	}
+
+	.message_info cite{
+		text-align: center;
+	}
+
+	footer .center div{
+		width: 30%;
+		text-align: center;
+	}
+}
+
+
+
+
+@media(max-width: 900px){
+	#banner .center div h1{
+		font-size: 2rem;
+	}
+
+	#banner .center div h2{
+		font-size: 1.7rem;
+	}
+
+	.message_info h2{
+		font-size: 1.5rem;
+	}
+
+	#banner .center div a{
+		font-size: 1.5rem;
+	}
+
+	.hexagon-container {
+	  width: 15rem;
+	  top: 77%;
+	}
+
+	#message_ceo .center .message_info{
+		height: 80%;
+	}
+
+	.swiper-slide img {
+      width: 80%;
+    }
+
+    .cryptoverse_card_card{
+    	position: relative;
+		width: 35rem;
+		height: 20rem;
+		background: #555;
+		border-radius: 1rem;
+		z-index: 10;
+    }
+
+    .cryptoverse_card_card .lni-btc{
+		font-size: 10rem;
+	}
+
+    .cryptoverse_card_card h2{
+		font-size: 1.8rem;
+    }
+
+    .cryptoverse_card_card h4{
+		font-size: 1.4rem;
+	}
+
+	.cryptoverse_card_info ul li{
+		font-size: 1.2rem;
+	}
+}
+
+
+
+@media(max-width: 760px){
+	.btn_menu{
+		display: block;
+	}
+
+
+	#header nav{
+		width: 100%;
+		height: 27.5rem;
+		position: absolute;
+		left: 50%;
+		top: 100%;
+		transform: translateX(-50%);
+		z-index: 10000;
+	}
+
+	.hide{
+		clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+	}
+
+	
+
+	#header nav ul{
+		flex-direction: column;
+	}
+
+	#header nav ul li{
+		width: 100%;
+		padding: 1.5rem;
+		background: var(--black);
+		text-align: left;
+		border: .2rem solid var(--yellow);
+		font-size: 2rem;
+		z-index: 100000;
+	}
+
+	#header nav ul li a{
+		display: block;
+	}
+}

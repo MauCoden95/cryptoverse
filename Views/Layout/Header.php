@@ -10,6 +10,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="<?= base_url ?>/Assets/Styles.css">
+	<link rel="stylesheet" type="text/css" href="<?= base_url ?>/Assets/Responsive.css">
     <!-- Lineicons CSS -->
     <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
 
@@ -31,7 +32,7 @@
 			</a>
 			
 			<nav>
-				<ul>
+				<ul class="nav">
 					<li><a href="">Comprar cryptos</a></li>
 					<li><a href="">Nosotros</a></li>
 					<li><a href="">¿Cómo empezar?</a></li>
@@ -54,5 +55,6 @@
 				<a href="http://localhost/cryptoverse/?controller=user&action=register" class="register_link"><i class="lni lni-users"></i> Registro</a>
 			<?php endif; ?>
 			
+			<button class="btn_menu"><i class="lni lni-menu"></i></button>
 		</div>
 	</header>
