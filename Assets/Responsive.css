@@ -98,6 +98,10 @@
 
 
 @media(max-width: 760px){
+	html{
+		font-size: 45%;
+	}
+
 	.btn_menu{
 		display: block;
 	}
@@ -136,4 +140,54 @@
 	#header nav ul li a{
 		display: block;
 	}
+
+	#features .center{
+		grid-template-rows: repeat(3, 1fr); 
+  		grid-template-columns: repeat(1, 1fr); 
+	}
+
+	#cryptoverse_card .center{
+		flex-direction: column;	
+		align-items: center;
+	}
+
+	.cryptoverse_card_card{
+		width: 80%;
+		height: 40rem;
+	}
+
+	.cryptoverse_card_card img{
+		width: 20rem;
+	}
+
+	.cryptoverse_card_card .lni-btc{
+		font-size: 25rem;
+	}
+
+	.cryptoverse_card_card .lni-mastercard{
+		font-size: 10rem;
+	}
+
+	.cryptoverse_card_card h2{
+		font-size: 4rem;
+	}
+
+	.cryptoverse_card_card h4{
+		font-size: 2rem;
+	}
+
+	.cryptoverse_card_info{
+		width: 80%;
+		min-height: 30rem;
+		margin-top: 5rem;
+	}
+
+	.cryptoverse_card_info ul li{
+		width: 100%;
+		font-size: 3rem;
+	}
+
+    .swiper-slide {
+    	width: 40% !important;
+  	}
 }
