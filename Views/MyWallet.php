@@ -1,7 +1,11 @@
-<?php if(isset($_SESSION['user'])) : ?>
+<?php 
+	require_once('Config/Parameters.php');
+	
+	if(isLogged()) : ?>
 	<?php
 		require_once 'Layout/Header.php';
 	?>
+	
 
 	<section id="myWallet">
 		<h2 class="section_title">Tu billetera</h2>
@@ -10,24 +14,28 @@
 				<h2>Bitcoin</h2>
 				<img src="<?= base_url ?>/Assets/Img/Bitcoin.png">
 				<h4><?php print_r($_SESSION['wallet']->bitcoin) ?></h4>
+				<a href="http://localhost/cryptoverse/?controller=wallet&action=buyBitcoin">Comprar</a>
 			</div>
 
 			<div class="wallet_card">
 				<h2>Ethereum</h2>
 				<img src="<?= base_url ?>/Assets/Img/Ethereum.png">
 				<h4><?php print_r($_SESSION['wallet']->ethereum) ?></h4>
+				<a href="http://localhost/cryptoverse/?controller=wallet&action=buyEthereum">Comprar</a>
 			</div>
 
 			<div class="wallet_card">
 				<h2>Litecoin</h2>
 				<img src="<?= base_url ?>/Assets/Img/Litecoin.png">
 				<h4><?php print_r($_SESSION['wallet']->litecoin) ?></h4>
+				<a href="http://localhost/cryptoverse/?controller=wallet&action=buyLitecoin">Comprar</a>
 			</div>
 
 			<div class="wallet_card">
 				<h2>Cardano</h2>
 				<img src="<?= base_url ?>/Assets/Img/Cardano.png">
 				<h4><?php print_r($_SESSION['wallet']->cardano) ?></h4>
+				<a href="http://localhost/cryptoverse/?controller=wallet&action=buyCardano">Comprar</a>
 			</div>
 		</div>
 	</section>

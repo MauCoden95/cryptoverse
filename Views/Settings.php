@@ -1,7 +1,11 @@
-<?php if(isset($_SESSION['user'])) : ?>
+<?php
+ 	require_once('Config/Parameters.php');
+	
+	if(isLogged()) : ?>
 	<?php
 		require_once 'Layout/Header.php';
 	?>
+	
 
 	<h2 class="h2_token">Su token de seguridad <i class="lni lni-protection"></i> es: <?= $_SESSION['token']; ?> </h2>
 
