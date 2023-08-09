@@ -11,29 +11,25 @@
 		<h2 class="section_title">Tu billetera</h2>
 		<div class="center">
 			<div class="wallet_card">
-				<h2>Bitcoin</h2>
-				<img src="<?= base_url ?>/Assets/Img/Bitcoin.png">
+				<h2>Bitcoin <img src="<?= base_url ?>/Assets/Img/Bitcoin.png"></h2>
 				<h4><?php print_r($_SESSION['wallet']->bitcoin) ?></h4>
 				<a href="http://localhost/cryptoverse/?controller=wallet&action=buyBitcoin">Comprar</a>
 			</div>
 
 			<div class="wallet_card">
-				<h2>Ethereum</h2>
-				<img src="<?= base_url ?>/Assets/Img/Ethereum.png">
+				<h2>Ethereum <img src="<?= base_url ?>/Assets/Img/Ethereum.png"></h2>
 				<h4><?php print_r($_SESSION['wallet']->ethereum) ?></h4>
 				<a href="http://localhost/cryptoverse/?controller=wallet&action=buyEthereum">Comprar</a>
 			</div>
 
 			<div class="wallet_card">
-				<h2>Litecoin</h2>
-				<img src="<?= base_url ?>/Assets/Img/Litecoin.png">
+				<h2>Litecoin <img src="<?= base_url ?>/Assets/Img/Litecoin.png"></h2>
 				<h4><?php print_r($_SESSION['wallet']->litecoin) ?></h4>
 				<a href="http://localhost/cryptoverse/?controller=wallet&action=buyLitecoin">Comprar</a>
 			</div>
 
 			<div class="wallet_card">
-				<h2>Cardano</h2>
-				<img src="<?= base_url ?>/Assets/Img/Cardano.png">
+				<h2>Cardano <img src="<?= base_url ?>/Assets/Img/Cardano.png"></h2>
 				<h4><?php print_r($_SESSION['wallet']->cardano) ?></h4>
 				<a href="http://localhost/cryptoverse/?controller=wallet&action=buyCardano">Comprar</a>
 			</div>

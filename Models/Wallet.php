@@ -72,24 +72,38 @@
 
 
         //METHODS
-        public function buyBitcoins($user,$btc,$mount){
-            $result = false;
-            $sql = "UPDATE wallets SET bitcoin = $mount WHERE user_id = $user;";
+        public function showWallet($user){
+            $sql = "SELECT * FROM wallets WHERE user_id = $user;";
 
             $query = $this->db->query($sql);
 
-            if ($query) {
-                $result = true;
-            }
+            if ($query && $query->num_rows == 1) {
+                $data = $query->fetch_object();
 
+               $result = $data;
+            }
 
             return $result;
         }
 
         public function buyingBitcoin($user,$cpt){
+            $sql = "UPDATE wallets SET bitcoin = ROUND(bitcoin + $cpt, 8) WHERE user_id = $user;";
+
+            $query = $this->db->query($sql);
+
+           if ($query && $query->num_rows == 1) {
+                $data = $query->fetch_object();
+
+               $result = $data;
+            }
+
+            return $result;
+        }
+
+        public function buyingEthereum($user,$cpt){
             $result = false;
 
-            $sql = "UPDATE wallets SET bitcoin = $cpt WHERE user_id = $user;";
+            $sql = "UPDATE wallets SET ethereum = ROUND(ethereum + $cpt, 8) WHERE user_id = $user;";
 
             $query = $this->db->query($sql);
 
@@ -100,7 +114,33 @@
             return $result;
         }
 
+        public function buyingLitecoin($user,$cpt){
+            $result = false;
 
+            $sql = "UPDATE wallets SET litecoin = ROUND(litecoin + $cpt, 8) WHERE user_id = $user;";
+
+            $query = $this->db->query($sql);
+
+            if ($query) {
+                $result = true;
+            }
+
+            return $result;
+        }
+
+        public function buyingCardano($user,$cpt){
+            $result = false;
+
+            $sql = "UPDATE wallets SET cardano = ROUND(cardano + $cpt, 8) WHERE user_id = $user;";
+
+            $query = $this->db->query($sql);
+
+            if ($query) {
+                $result = true;
+            }
+
+            return $result;
+        }
     }
 
 

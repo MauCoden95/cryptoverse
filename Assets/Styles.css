@@ -792,12 +792,15 @@ input[type="range"]::-webkit-slider-thumb {
 
 .wallet_card img{
 	position: absolute;
-	bottom: 9rem;
-	right: 4rem;
+	top: 2rem;
+	left: 12rem;
 	width: 5rem;
 }
 
 .wallet_card h2{
+	position: absolute;
+	top: 2rem;
+	left: 1.5rem;
 	display: block;
 	text-align: center;
 	line-height: 10rem;
@@ -806,11 +809,12 @@ input[type="range"]::-webkit-slider-thumb {
 
 .wallet_card h4{
 	position: absolute;
-	bottom: 6rem;
-	left: 5rem;
+	top: 8rem;
+	left: 50%;
+	transform: translateX(-50%);
 	text-align: center;
 	line-height: 10rem;
-	font-size: 5rem;
+	font-size: 2.5rem;
 }
 
 
@@ -887,7 +891,9 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 .price_btc--ars,
-.price_eth--ars{
+.price_eth--ars,
+.price_ltc--ars,
+.price_ada--ars{
 	font-size: 1.7rem;
 }
 

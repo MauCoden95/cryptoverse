@@ -68,21 +68,34 @@ if (btnMenu) {
 const API_URL = "https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH,LTC,ADA&tsyms=ARS,USD";
 let priceBtcArs = document.querySelector('.price_btc--ars');
 let priceEthArs = document.querySelector('.price_eth--ars');
+let priceLtcArs = document.querySelector('.price_ltc--ars');
+let priceAdaArs = document.querySelector('.price_ada--ars');
 
 let btnPrice = document.querySelector('.btn_price');
 
-let totalPriceARS = 0;
+let totalPriceBtcARS = 0;
+let totalPriceEthARS = 0;
+let totalPriceLtcARS = 0;
+let totalPriceAdaARS = 0;
 
 let btcArs = 0;
 let ethArs = 0;
+let ltcArs = 0;
+let adaArs = 0;
 
-let iptCalc = document.querySelector('.input_calc');
+let iptCalcBtc = document.querySelector('.input_calc_btc');
+let iptCalcEth = document.querySelector('.input_calc_eth');
+let iptCalcLtc = document.querySelector('.input_calc_ltc');
+let iptCalcAda = document.querySelector('.input_calc_ada');
+
 
 fetch(`${API_URL}`)
     .then((response) => response.json())
     .then((cryptos) => {
         btcArs = cryptos.BTC.ARS;    
         ethArs = cryptos.ETH.ARS;
+        ltcArs = cryptos.LTC.ARS;
+        adaArs = cryptos.ADA.ARS;
 
         if (priceBtcArs) {
             priceBtcArs.innerHTML = btcArs;
@@ -92,12 +105,19 @@ fetch(`${API_URL}`)
             priceEthArs.innerHTML = ethArs;
         }
         
-        
+        if (priceLtcArs) {
+            priceLtcArs.innerHTML = ltcArs;
+        }
+
+        if (priceAdaArs) {
+            priceAdaArs.innerHTML = adaArs;
+        }
 
         
         
 
-        console.log(cryptos);
+        console.log(cryptos.ETH.ARS);
+        console.log(cryptos.LTC.ARS);
     })
 
 
@@ -110,9 +130,29 @@ btnPrice.addEventListener("click", function(event) {
     event.preventDefault();
   
     let quantity = parseFloat(document.querySelector('.input_quantity').value);
-    totalPriceARS = quantity / btcArs;
-    console.log(totalPriceARS);
-    iptCalc.value = totalPriceARS.toFixed(8);
+    totalPriceBtcARS = quantity / btcArs;
+    totalPriceEthARS = quantity / ethArs;
+    totalPriceLtcARS = quantity / ltcArs;
+    totalPriceAdaARS = quantity / adaArs;
+    //console.log(totalPriceARS);
 
+    if (iptCalcBtc) {
+        iptCalcBtc.value = totalPriceBtcARS.toFixed(8);    
+    }
+
+    if (iptCalcEth) {
+        iptCalcEth.value = totalPriceEthARS.toFixed(8);    
+    }
+    
+    
+    if (iptCalcLtc) {
+        iptCalcLtc.value = totalPriceLtcARS.toFixed(8);    
+    }
+
+    if (iptCalcAda) {
+        iptCalcAda.value = totalPriceAdaARS.toFixed(8);    
+    }
+    
+    
 
 });
