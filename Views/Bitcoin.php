@@ -9,22 +9,47 @@
 	<section>
 		<h2 class="section_title">Comprar Bitcoins</h2>
 		<div class="center">
-			<!--<h2>Precio bitcoin ARS: <span class="price_btc--ars"></span></h2>
-			<h2>Precio bitcoin USD: <span class="price_btc--usd"></span></h2>-->
+			
 
-			<form class="buy" action="#" method="POST">
+			<form class="buy" action="http://localhost/cryptoverse/?controller=wallet&action=buyingBitcoin" method="POST">
+				<?php if(isset($_SESSION['errors_buy'])) : ?>
+		            <div>
+		                <ul>
+		                    <?php foreach($_SESSION['errors_buy'] as $error) :  ?>
+		                        <li class="error"><?= "*".$error; ?></li>
+		                    <?php endforeach; ?>
+		                </ul>
+		            </div>
+
+			        <?php elseif(isset($_SESSION['buy_success'])): ?>
+			            <div class="success">
+			                <p>Compra realizada con exito!!!</p>
+			            </div>
+			        <?php endif; ?>
 				<div class="prices_div">
-					<h2 class="buy_title">Precios</h2>
+					
+					<h2 class="buy_title">Precio</h2>
 					<div>
 						<div><img src="http://localhost/cryptoverse/Assets/Img/ARS.png"> <span class="price_btc--ars"></span> $</div>
-						<div><img src="http://localhost/cryptoverse/Assets/Img/USD.png"> <span class="price_btc--usd"></span> USD</div>
 					</div>
 
 					<div class="div_q">
-						<input type="number" class="input_quantity" placeholder="Cantidad">
-						<button class="btn_price">Agregar</button>
+						<input type="number" name="quantity" class="input_quantity" placeholder="Pagaré">
+						<button class="btn_price">A pagar</button>
 					</div>
-					<span class="total_price"></span>
+
+					<input type="text" name="receive" class="input_calc" placeholder="Recibiré">
+
+					<input type="number" name="token" min="100000" max="999999" class="input_token" placeholder="Ingrese su token de seguridad...">
+					
+
+
+					<h2 class="buy_subtitle">Ingrese su tarjeta <i class="lni lni-mastercard"></i> <i class="lni lni-visa"></i></h2>
+					<div class="div_card">
+						<input type="number" name="card1" placeholder="XXXX"><input type="number" name="card2" placeholder="XXXX"><input type="number" name="card3" placeholder="XXXX"><input type="number" name="card4" placeholder="XXXX">
+					</div>
+
+					<button class="btn_buy">Comprar</button>
 				</div>
 			</form>
 		</div>

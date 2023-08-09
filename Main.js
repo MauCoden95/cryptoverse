@@ -67,24 +67,35 @@ if (btnMenu) {
 /*PRICE CRYPTO*/
 const API_URL = "https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH,LTC,ADA&tsyms=ARS,USD";
 let priceBtcArs = document.querySelector('.price_btc--ars');
-let priceBtcUsd = document.querySelector('.price_btc--usd');
+let priceEthArs = document.querySelector('.price_eth--ars');
 
 let btnPrice = document.querySelector('.btn_price');
 
 let totalPriceARS = 0;
-let totalPriceUSD = 0;
 
 let btcArs = 0;
-let btcUsd = 0;
+let ethArs = 0;
+
+let iptCalc = document.querySelector('.input_calc');
 
 fetch(`${API_URL}`)
     .then((response) => response.json())
     .then((cryptos) => {
-        btcArs = cryptos.BTC.ARS;
-        btcUsd = cryptos.BTC.USD;
+        btcArs = cryptos.BTC.ARS;    
+        ethArs = cryptos.ETH.ARS;
 
-        priceBtcArs.innerHTML = btcArs;
-        priceBtcUsd.innerHTML = btcUsd;
+        if (priceBtcArs) {
+            priceBtcArs.innerHTML = btcArs;
+        }
+
+        if (priceEthArs) {
+            priceEthArs.innerHTML = ethArs;
+        }
+        
+        
+
+        
+        
 
         console.log(cryptos);
     })
@@ -99,11 +110,9 @@ btnPrice.addEventListener("click", function(event) {
     event.preventDefault();
   
     let quantity = parseFloat(document.querySelector('.input_quantity').value);
-    totalPriceARS = quantity * btcArs;
-    totalPriceUSD = quantity * btcUsd;
+    totalPriceARS = quantity / btcArs;
     console.log(totalPriceARS);
-    console.log(totalPriceUSD);
-    
+    iptCalc.value = totalPriceARS.toFixed(8);
 
 
 });
