@@ -42,7 +42,11 @@
 				
 				
 				if (count($_SESSION['errors_buy']) <= 0) {
-					//echo "OK";
+					$wallet = new Wallet();
+					$wallet->setBitcoin($receive);
+
+					$wallet->buyingBitcoin($_SESSION['user']->id,$receive);
+
 					unset($_SESSION['errors_buy']);
 					$_SESSION['buy_success'] = true;
 					print_r($_SESSION['buy_success']);

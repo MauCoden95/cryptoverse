@@ -86,6 +86,20 @@
             return $result;
         }
 
+        public function buyingBitcoin($user,$cpt){
+            $result = false;
+
+            $sql = "UPDATE wallets SET bitcoin = $cpt WHERE user_id = $user;";
+
+            $query = $this->db->query($sql);
+
+            if ($query) {
+                $result = true;
+            }
+
+            return $result;
+        }
+
 
     }
 
